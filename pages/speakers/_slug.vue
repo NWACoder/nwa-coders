@@ -1,11 +1,17 @@
 <template>
-	<div class="container mx-auto">
+	<div class="container mx-auto mt-12">
 
-		<div class="h-96 bg-gray-800">
-			<p class="text-center text-white py-12"></p>
+		<div class="aspect-w-16 aspect-h-9 mx-auto bg-gray-800">
+				<iframe v-if="page.properties.Video.rich_text.length > 0"  id="ytplayer" type="text/html" class="h-full w-full"
+  :src="'https://www.youtube.com/embed/'+page.properties.Video.rich_text[0].plain_text"
+  frameborder="0" ></iframe>
+			
 		</div>
 		
-		<h1 class="text-center text-4xl my-12 uppercase">Guest Speaker: {{ page.properties.Name.title[0].plain_text }}</h1>
+		<h1 class="text-center text-4xl mb-4 mt-12 uppercase">
+			{{ page.properties.Topic.rich_text[0].plain_text }}
+		</h1>
+		<p class="text-center text-lg mb-12 uppercase ">Guest Speaker: {{ page.properties.Name.title[0].plain_text }}</p>
 		<div class="block">
 			<div class="border-b border-gray-200">
 				<nav class="-mb-px flex space-x-8" aria-label="Tabs">

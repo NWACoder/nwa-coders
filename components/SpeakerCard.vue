@@ -8,6 +8,8 @@
       <div class="flex-1 min-w-0">
       	<a :href="'/speakers/'+speaker.properties.Slug.rich_text[0].plain_text"  class="focus:outline-none">
           <span class="absolute inset-0" aria-hidden="true" />
+          
+          <p>{{ speaker.properties.Topic.rich_text[0].plain_text }}</p>
           <p class="text-sm font-medium text-gray-900">
             {{speaker.properties.Name.title[0].plain_text}}
           </p>
