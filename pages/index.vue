@@ -8,7 +8,6 @@
 						</h1>
 					</div>
 					<p class="my-8 text-2xl">site coming soon</p>
-					<a class="bg-black text-white px-5 py-3 text-sm shadow-sm font-medium tracking-wider" href="https://discord.gg/cjGQR9Rq8F"> Join Discord Community </a>
 					<MeetSchedule :data="data"/>
 
 					<a href="/speakers" class=" block text-2xl my-12 text-white bg-black w-max p-4 mx-auto">View Past Speakers</a>
