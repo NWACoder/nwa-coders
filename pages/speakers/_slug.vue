@@ -49,6 +49,49 @@
 <script>
 	export default {
 
+		head(){
+			return {
+				title: this.page.properties.Topic.rich_text[0].plain_text,
+				meta: [
+				      {
+				        property: 'og:title',
+				        content: `#${this.page ? this.page.properties.Topic.rich_text[0].plain_text : ''}`,
+				        vmid: 'og:title'
+				      },
+				      {
+				        property: 'og:image',
+				        content: `${this.page ? this.page.properties.Image.url : ''}`,
+				        vmid: 'og:image'
+				      },
+				      {
+				        property: 'og:description',
+				        content: `${this.page ? `Guest Speaker: ${this.page.properties.Name.title[0].plain_text} ${this.page.properties.Topic.rich_text[0].plain_text}` : ''}`,
+				        vmid: 'og:description'
+				      },
+				      {
+				        property: 'twitter:title',
+				        content: `${this.page ? this.page.properties.Topic.rich_text[0].plain_text : ''}`,
+				        vmid: 'twitter:title'
+				      },
+				      {
+				        property: 'twitter:image',
+				        content: `${this.page ? this.page.properties.Image.url : ''}`,
+				        vmid: 'twitter:image'
+				      },
+				      {
+				        property: 'twitter:description',
+				        content: `${this.page ? `Guest Speaker: ${this.page.properties.Name.title[0].plain_text} ${this.page.properties.Topic.rich_text[0].plain_text}` : ''}`,
+				        vmid: 'twitter:description'
+				      },
+				      {
+				        name: 'twitter:card',
+				        content: `summary_large_image`,
+				        vmid: 'twitter:card'
+				      }
+				    ]
+			}
+		},
+
 		async asyncData({ $axios, params }) {
 			
 			let content = {}

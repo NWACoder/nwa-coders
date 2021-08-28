@@ -20,6 +20,19 @@
 <script>
 	export default {
 
+		head() {
+      return {
+        title: 'NWA Coders',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'NWA Coders: Learn , Improve, Land a job '
+          }
+        ]
+      }
+    },
+
 		data(){
 			return {
 				title: 'NWA',
