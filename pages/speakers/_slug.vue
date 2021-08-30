@@ -2,10 +2,7 @@
 	<div class="container mx-auto mt-12">
 
 		<div class="aspect-w-16 aspect-h-9 mx-auto bg-gray-800">
-				<iframe v-if="page.properties.Video.rich_text.length > 0"  id="ytplayer" type="text/html" class="h-full w-full"
-  :src="'https://www.youtube.com/embed/'+page.properties.Video.rich_text[0].plain_text"
-  frameborder="0" ></iframe>
-			
+			<iframe v-if="page.properties.Video.rich_text.length > 0"  id="ytplayer" type="text/html" class="h-full w-full" :src="'https://www.youtube.com/embed/'+page.properties.Video.rich_text[0].plain_text" frameborder="0" ></iframe>
 		</div>
 		
 		<h1 class="text-center text-4xl mb-4 mt-12 uppercase">
@@ -20,24 +17,7 @@
 				</nav>
 			</div>
 		</div>
-		<div class="my-4" v-if="tabs[0].current">
-			<template v-for="item in content"  class="leading-relaxed">
-				
-				<p :key="item.id" v-if="item.type == 'paragraph' && item.paragraph.text.length == 1"
-				:class="{ 'font-bold': item.paragraph.text[0].annotations.bold }"
-				class="leading-relaxed">
-
-					{{ item.paragraph.text[0].plain_text }}
-				</p>
-
-				<br v-else-if="item.type == 'paragraph' && item.paragraph.text.length == 0" :key="item.id" />
-					
-				<li :key="item.id" v-if="item.type == 'bulleted_list_item'"
-				class="pl-4 leading-relaxed">
-					{{ item.bulleted_list_item.text[0].plain_text }}
-				</li>
-
-			</template>	
+		<div class="my-4 leading-relaxed" v-if="tabs[0].current"  v-html="content">
 		</div>
 		
 		<div class="my-4" v-if="tabs[1].current">
@@ -48,6 +28,113 @@
 
 <script>
 	export default {
+
+		async asyncData({ $axios, params }) {
+			
+			let page = {}
+			let blocks = {}
+			let content = ''
+
+			const filterData = { 
+				filter: { "and":  [ 
+						{ property: "Slug", text: { equals: params.slug } }, 
+						{ property: "Status", select: { equals: "Published" } }
+					]
+				}
+
+			}
+			
+			page = await $axios.$post('databases/815035805b6d4a53ab7a74c81ee7fa0b/query', filterData)
+
+			blocks = await $axios.$get(`blocks/${page.results[0].id}/children`)
+
+			const childBlocks = await Promise.all(blocks.results.filter((block) => block.has_children)
+				.map(async (block) => {
+					const blocky = await $axios.$get(`blocks/${block.id}/children`)
+					return {
+						id: block.id,
+						children: blocky.results
+					} 
+				})
+			)
+			
+			const blocksWithChildren = blocks.results.map((block) => {
+				if (block.has_children && !block[block.type].children) {
+					block[block.type].children = childBlocks.find(
+			        	(x) => x.id === block.id
+			      	)?.children;
+			    }
+			    return block;
+			})
+
+
+			// build out content
+			const renderBlocks = (block) => {
+
+				const { type, id } = block;
+  				const value = block[type];
+
+				switch (type) {
+					case 'paragraph':
+						if(value.text.length === 1){
+							let classList = 'leading-relaxed'
+							let textContent = '<p>'
+							value.text.forEach( text =>{
+								if(text.annotations.bold){
+									classList = 'font-bold'
+									textContent += `<span class="${classList}">${text.plain_text}</span>`
+								}else{
+									textContent += `${text.plain_text}`
+								}
+							})
+							return `${textContent}</p>`
+						}else{
+							return '<br>'
+						}
+					case 'numbered_list_item':
+						return `<li class="leading-relaxed ml-6">${value.text[0].plain_text}</li>`
+					case 'bulleted_list_item':{
+						let classList = ''
+						let textContent = '<li class="leading-relaxed ml-4">'
+						value.text.forEach( text =>{
+							if(text.annotations.bold){
+								classList = 'font-bold'
+								textContent += `<span class="${classList}">${text.plain_text}</span>`
+							}else{
+								textContent += `${text.plain_text}`
+							}
+						})
+						return `${textContent}</li>`
+					}
+					case "to_do":
+				    	return  `<label for=${id}><input type="checkbox" id=${id} defaultChecked=${value.checked} /> ${value.text}</label>`
+					default:
+    			}
+
+			}
+
+			blocksWithChildren.forEach( block =>{
+				content += renderBlocks(block)
+				if(block.has_children) block[block.type].children.forEach( (block, index,array) =>{ 
+					if(block.type === 'numbered_list_item' && index === 0) content += `<ol class="list-decimal list-inside">`
+					content += renderBlocks(block)
+					if(block.type === 'numbered_list_item' && index === array.length -1) content += '</ol>'
+					
+				})
+
+			})
+
+			return { page: page.results[0], content }
+		},
+
+		data(){
+			return {
+				tabs: [
+					  { name: 'Notes', href: '#', current: true },
+					  { name: 'Resources', href: '#', current: false },
+					],
+			}
+		},
 
 		head(){
 			return {
@@ -91,42 +178,13 @@
 				    ]
 			}
 		},
-
-		async asyncData({ $axios, params }) {
-			
-			let content = {}
-			let page = {}
-
-			const filterData = { 
-				filter: { "and":  [ 
-						{ property: "Slug", text: { equals: params.slug } }, 
-						{ property: "Status", select: { equals: "Published" } }
-					]
-				}
-
-			}
-			
-			page = await $axios.$post('databases/815035805b6d4a53ab7a74c81ee7fa0b/query', filterData)
-
-			content = await $axios.$get(`blocks/${page.results[0].id}/children`)
 		
-			return { page: page.results[0], content: content.results }
-		},
-		data(){
-			return {
-				tabs: [
-					  { name: 'Notes', href: '#', current: true },
-					  { name: 'Resources', href: '#', current: false },
-					]
-			}
-		},
-
 		methods: {
 			selectTab (i) {
 				this.tabs.forEach((tab, index) => {
 				tab.current = (index === i)
 				})
-			}
+			},
 		},
 	}
 </script>

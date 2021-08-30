@@ -27,7 +27,7 @@
           {
             hid: 'description',
             name: 'description',
-            content: 'NWA Coders: Learn , Improve, Land a job '
+            content: 'NWA Coders: Learn, Improve, Land a job '
           }
         ]
       }
