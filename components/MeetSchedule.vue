@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-gray-100 p-0.5 rounded-lg shadow-lg">
+	<div class="bg-gray-100 p-0.5 rounded-lg shadow-lg border-r-2">
 		<h2 class="text-2xl my-3 p-4 mx-auto rounded-md">Meet-up Schedule</h2>
 		<div v-for="item in data.results" :key="item.id" class="block px-6">
 			<div 

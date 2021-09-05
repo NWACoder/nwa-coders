@@ -10,7 +10,7 @@
 					<p class="my-8 text-2xl">site coming soon</p>
 					<MeetSchedule :data="data"/>
 
-					<a href="/speakers" class=" block text-2xl my-12 text-white bg-black rounded-md w-max p-4 mx-auto">View Past Speakers</a>
+					<a href="/speakers" class="block text-2xl my-12 text-white bg-black rounded-md w-max p-4 mx-auto hover:border-2 hover:border-gray-700">View Past Speakers</a>
 				</div>
 			</div>
 		</div>
