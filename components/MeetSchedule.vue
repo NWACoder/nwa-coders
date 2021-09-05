@@ -1,6 +1,6 @@
 <template>
-	<div class="bg-gray-100 m-12 p-0.5 rounded-lg shadow-lg">
-		<h2 class="text-2xl my-3 w-1/5 p-4 mx-auto rounded-md">Meet-up Schedule</h2>
+	<div class="bg-gray-100 p-0.5 rounded-lg shadow-lg">
+		<h2 class="text-2xl my-3 p-4 mx-auto rounded-md">Meet-up Schedule</h2>
 		<div v-for="item in data.results" :key="item.id" class="block px-6">
 			<div 
 			:class="{ 'border-blue-800 border-4': getDate(item.properties.Day.date.start) }"
