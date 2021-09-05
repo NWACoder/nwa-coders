@@ -20,6 +20,7 @@
 					// { name: "Events", path: "/events" },
 					// { name: "Contact", path: "/contact" },
 					// { name: "About", path: "/about" },
+					// { name: "Resources", path: "/resources" }
 				],
 				toggle: true
 			}
