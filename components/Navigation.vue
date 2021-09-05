@@ -6,7 +6,7 @@
 		class="col-span-2 md:col-span-1 place-self-center md:justify-self-end md:block space-x-8">
 			<a v-for="item in nav" :key="item.name" :href="item.path"
 			class="block md:inline-block "> {{ item.name }}</a>
-			<a class="bg-black text-white px-5 py-3 text-sm shadow-sm font-medium tracking-wider" href="https://discord.gg/cjGQR9Rq8F" target="_blank">Discord Community </a>
+			<a class="bg-black text-white px-5 py-3 text-sm shadow-sm font-medium tracking-wider" href="https://discord.gg/bDFe9F8mXD" target="_blank">Discord Community </a>
 		</div>
 	</div>
 </template>
