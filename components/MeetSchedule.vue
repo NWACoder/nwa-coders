@@ -31,7 +31,6 @@
 
 		props: { data: { type: Object, default: () => ({}) } },
 
-		
 		methods:{
 			date(date){
 				if(new Date().getDate().toString() === dateFormat(date, "UTC:d")) return "Today"

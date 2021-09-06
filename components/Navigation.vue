@@ -3,11 +3,14 @@
 		<a href="/" class="p-4 sm:p-0 text-2xl"><span class="font-bold">NWA C</span>oders</a>
 		<div class="cursor-pointer md:hidden justify-self-end hover:bg-black hover:text-white p-4" @click="toggle = !toggle">Menu</div>
 		<div :class="{ 'hidden': toggle }" 
-		class="col-span-2 md:col-span-1 place-self-center md:justify-self-end md:block space-x-8">
+		class="col-span-2 justify-self-end text-right md:col-span-1 md:justify-self-end md:block space-x-8">
 			<a v-for="item in nav" :key="item.name" :href="item.path"
 			class="block md:inline-block pb-2"> {{ item.name }}</a>
-			<a class="hover:border-2 hover:border-gray-700 bg-black text-white rounded-md px-5 py-3 text-sm shadow-sm font-medium tracking-wider" href="https://discord.gg/bDFe9F8mXD" target="_blank">Discord Community </a>
-		</div>
+			<hr class="md:hidden mb-6 text-right mx-auto">
+			<button>
+				<a class=" hover:border-2 hover:border-gray-700 bg-black text-white px-5 py-3 text-sm shadow-sm font-medium tracking-wider" href="https://discord.gg/bDFe9F8mXD" target="_blank">Discord Community </a>
+			</button>
+		</div> 
 	</div>
 </template>
 
