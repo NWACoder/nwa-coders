@@ -1,10 +1,10 @@
 <template>
-	<div>
-		<h2 class="text-2xl my-12 text-white bg-black w-max p-4 mx-auto">Meet-up Schedule</h2>
-		<div v-for="item in data.results" :key="item.id">
+	<div class="bg-gray-100 p-0.5 rounded-lg shadow-lg border-r-2">
+		<h2 class="text-2xl my-3 p-4 mx-auto rounded-md">Meet-up Schedule</h2>
+		<div v-for="item in data.results" :key="item.id" class="block px-6">
 			<div 
 			:class="{ 'border-blue-800 border-4': getDate(item.properties.Day.date.start) }"
-			 class="relative block rounded-lg border-2 border-gray-300 bg-white shadow-sm px-6 py-4 cursor-pointer hover:border-gray-400 sm:flex sm:justify-between focus:outline-none mb-4">
+			 class="relative block rounded-lg border-2 border-gray-300 bg-white shadow-md px-6 py-4 cursor-pointer hover:border-gray-400 sm:flex sm:justify-between focus:outline-none mb-4">
 				<div class="flex text-left">
 					<div class="text-sm">
 						<div class="font-medium text-gray-900">
@@ -18,7 +18,7 @@
 				<div class="mt-2 flex text-sm sm:mt-0 sm:block sm:ml-4 sm:text-right">
 					<div class="font-medium text-gray-900">{{ date(item.properties.Day.date.start) }}</div>
 				</div>
-			</div>
+			</div> 
 		</div>
 	</div>
 </template>
@@ -31,6 +31,7 @@
 
 		props: { data: { type: Object, default: () => ({}) } },
 
+		
 		methods:{
 			date(date){
 				if(new Date().getDate().toString() === dateFormat(date, "UTC:d")) return "Today"
@@ -39,7 +40,8 @@
 			getDate(date){
 				return new Date().getDate().toString() === dateFormat(date, "UTC:d");
 			}
+
+			
 		}
 	}
-
 </script>
