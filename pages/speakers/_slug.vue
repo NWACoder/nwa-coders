@@ -1,8 +1,8 @@
 <template>
 	<div class="container mx-auto mt-12">
 
-		<div class="aspect-w-16 aspect-h-9 mx-auto bg-gray-800">
-			<iframe v-if="page.properties.Video.rich_text.length > 0"  id="ytplayer" type="text/html" class="h-full w-full" :src="'https://www.youtube.com/embed/'+page.properties.Video.rich_text[0].plain_text" frameborder="0" ></iframe>
+		<div class="aspect-w-16 aspect-h-9 mx-auto bg-gray-800" v-if="page.properties.Video.rich_text.length > 0">
+			<iframe  id="ytplayer" type="text/html" class="h-full w-full" :src="'https://www.youtube.com/embed/'+page.properties.Video.rich_text[0].plain_text" frameborder="0" ></iframe>
 		</div>
 		
 		<h1 class="text-center text-4xl mb-4 mt-12 uppercase">
