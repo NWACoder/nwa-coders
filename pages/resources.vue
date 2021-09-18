@@ -5,17 +5,8 @@
         <h3 class="text-center text-2xl my-10">
             A currated list of helpful resources & communites
         </h3>
-        <div class="bg-gray-100 h-96 rounded-lg shadow-lg border-r-2 grid grid-cols-3 justify-items-center">
-            <div class="..."></div>
-            <ul class="...">
-                <li v-for="item in resources" :key="item.id">
-                    <ResourceItem class=""  :aResource="item"/>
-                </li>
-            </ul>
-            <div class="...">
-                <ResourceDescription :aResource="item"></ResourceDescription>
-            </div>
-
+        <div class="bg-gray-100 h-auto py-4 rounded-lg shadow-lg border-r-2  justify-items-center relative">
+            <ResourceItem v-for="item in resources" :key="item.id" :aResource="item"/>
         </div>
     </div>
 </template>
