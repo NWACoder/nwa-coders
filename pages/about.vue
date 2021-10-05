@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto mt-12 justify-items-center w-3/5">
+  <div class="text-white container mx-auto mt-12 justify-items-center w-3/5">
     <div>
       <h1 class="text-center text-4xl my-12 uppercase">About</h1>
     </div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="container mx-auto mt-12">
+	<div class="text-white container mx-auto mt-12">
 
 		<div>
 			<h1 class="text-center text-4xl my-12 uppercase">Connect with us</h1>
@@ -7,8 +7,8 @@
 		<div class=" grid grid-cols-4 gap-8">
 			<div class="block">
 				<button v-for="item in contacts" :key="item"
-					:class="{ 'border-gray-400': type == item }" 
-					class="block w-full mb-12 border-r-2 border-black p-2 hover:bg-gray-300"
+					:class="{ 'border-blue-800': type == item }" 
+					class="block w-full mb-12 border-r-2 border-white p-2 hover:bg-gray-300 hover:text-black"
 					@click="type = item" 
 				>{{item}}</button>
 			</div>

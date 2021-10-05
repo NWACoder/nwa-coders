@@ -1,6 +1,13 @@
 <template>
 	<div class="font-montserrat">
 		<Navigation/>
-		<Nuxt class="px-4 md:px-0" />
+		<Nuxt />
+		<Foot/>
 	</div>
 </template>
+<style>
+	
+	body{
+		@apply bg-gradient-to-b from-main via-mid to-second
+	}
+</style>

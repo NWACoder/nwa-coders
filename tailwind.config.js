@@ -1,13 +1,22 @@
 module.exports = {
-  mode: 'jit',
-  purge: [],
+  purge: {
+	options: {
+      safelist: []
+  	}
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
-
     extend: {
       fontFamily: {
         'montserrat': ['"Montserrat"', 'sans-serif']
       },
+      colors:{
+  		'main': '#001E26',
+  		'mid': '#003643',
+  		'second': '#032A36',
+  		'base': '#255461',
+  		'trim': '#009A5B'
+      }
     },
     boxShadow: {
       sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',

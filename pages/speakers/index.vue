@@ -1,5 +1,5 @@
 <template>
-	<div class="container mx-auto mt-12">
+	<div class="text-white container mx-auto mt-12 px-4 md:px-0">
 		<div>
 			<h1 class="text-center text-4xl my-12 uppercase">Guest Speakers</h1>
 		</div>

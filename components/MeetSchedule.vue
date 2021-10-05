@@ -40,8 +40,6 @@
 			getDate(date){
 				return new Date().getDate().toString() === dateFormat(date, "UTC:d");
 			}
-
-			
 		}
 	}
 </script>

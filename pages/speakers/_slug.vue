@@ -1,10 +1,12 @@
 <template>
-	<div class="container mx-auto mt-12">
-
+	<div class="text-white container mx-auto mt-12 px-4 md:px-0">
 		<div class="aspect-w-16 aspect-h-9 mx-auto bg-gray-800" v-if="page.properties.Video.rich_text.length > 0">
 			<iframe  id="ytplayer" type="text/html" class="h-full w-full" :src="'https://www.youtube.com/embed/'+page.properties.Video.rich_text[0].plain_text" frameborder="0" ></iframe>
 		</div>
 		
+		<!-- <div class="bg-white text-black p-4"> </div> -->
+			
+
 		<h1 class="text-center text-4xl mb-4 mt-12 uppercase">
 			{{ page.properties.Topic.rich_text[0].plain_text }}
 		</h1>
@@ -12,17 +14,19 @@
 		<div class="block">
 			<div class="border-b border-gray-200">
 				<nav class="-mb-px flex space-x-8" aria-label="Tabs">
-					<a v-for="(tab, index) in tabs" :key="tab.name" @click='selectTab(index)' :href="tab.href" :class="[tab.current ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300', 'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']" :aria-current="tab.current ? 'page' : undefined">{{ tab.name }}
+					<a v-for="(tab, index) in tabs" :key="tab.name" @click='selectTab(index)' :href="tab.href" :class="[tab.current ? 'border-blue-500 text-blue-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300', 'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']" :aria-current="tab.current ? 'page' : undefined">{{ tab.name }}
 					</a>
 				</nav>
 			</div>
 		</div>
-		<div class="my-4 leading-relaxed" v-if="tabs[0].current"  v-html="content">
+		<div class="my-4 leading-relaxed " v-if="tabs[0].current" v-html="content">
 		</div>
 		
 		<div class="my-4" v-if="tabs[1].current">
 			
 		</div>
+		
+
 	</div>
 </template>
 
@@ -66,7 +70,6 @@
 			    }
 			    return block;
 			})
-
 
 			// build out content
 			const renderBlocks = (block) => {
