@@ -1,5 +1,5 @@
 <template>
-	<div class="relative bg-base">
+	<div class="relative bg-thir">
 		<div class="h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
 			<img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80" alt="" />
 		</div>

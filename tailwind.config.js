@@ -14,7 +14,7 @@ module.exports = {
   		'main': '#001E26',
   		'mid': '#003643',
   		'second': '#032A36',
-  		'base': '#255461',
+  		'thir': '#255461',
   		'trim': '#009A5B'
       }
     },
