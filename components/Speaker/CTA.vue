@@ -5,7 +5,7 @@
 		</div>
 		<div class="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 			<div class="md:ml-auto md:w-1/2 md:pl-10">
-				<h2 class="text-base font-semibold uppercase tracking-wider text-gray-300">Amazing Award winning</h2>
+				<!-- <h2 class="text-base font-semibold uppercase tracking-wider text-gray-300"></h2> -->
 				<p class="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">Speakers</p>
 				<p class="mt-3 text-lg text-gray-300">We host a variety of speakers, with vast specialties in the tech industry </p>
 				<div class="mt-8">

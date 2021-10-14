@@ -1,5 +1,5 @@
 <template>
 	<div class="text-white">
-		<div class="h-screen"></div>
+		<div class="h-96"></div>
 	</div>
 </template>

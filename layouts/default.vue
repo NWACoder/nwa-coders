@@ -6,7 +6,6 @@
 	</div>
 </template>
 <style>
-	
 	body{
 		@apply bg-gradient-to-b from-main via-mid to-second
 	}

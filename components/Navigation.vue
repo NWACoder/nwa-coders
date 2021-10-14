@@ -20,11 +20,11 @@
 		data(){
 			return{
 				nav: [
-					{ name: "Sponsor", path: "/sponsor" },
-					{ name: "Events", path: "/events" },
-					{ name: "Contact", path: "/contact" },
-					{ name: "Resources", path: "/resources" },
-					{ name: "About", path: "/about" },
+					// { name: "Sponsor", path: "/sponsor" },
+					// { name: "Events", path: "/events" },
+					// { name: "Contact", path: "/contact" },
+					// { name: "Resources", path: "/resources" },
+					// { name: "About", path: "/about" },
 				],
 				toggle: true
 			}

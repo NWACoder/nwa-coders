@@ -2,10 +2,9 @@
 	<div class="mt-12">
 		<Hero/>
 		<EventBlock :data="data"/>
-		<!-- <Sponsors/> -->
-		<NewsLetter/>
+		<!-- <NewsLetter/> -->
 		<SpeakerCTA/>
-		
+		<!-- <Sponsors/> -->
 	</div>
 </template>
 
