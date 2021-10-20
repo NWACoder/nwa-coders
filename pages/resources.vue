@@ -17,9 +17,10 @@
             let resources = {};
 			const filterData = { 
 				filter: { property: "Status", select: { equals: "Published" } },
-				// sorts: [ { property: "Created", direction: "ascending" }]
+				sorts: [ { property: "Created", direction: "ascending" }]
 			}
 			resources = await $axios.$post('databases/e24c93ce3ea44cfd9a80b65bda42ba18/query', filterData)
+			
 			return { resources: resources.results }
 		},
     }
