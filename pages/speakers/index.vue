@@ -1,5 +1,5 @@
 <template>
-	<div class="text-white container mx-auto mt-12 px-4 md:px-0">
+	<div class="text-white container mx-auto mt-12 px-4 md:px-0 h-screen">
 		<div>
 			<h1 class="text-center text-4xl my-12 uppercase">Guest Speakers</h1>
 		</div>
@@ -20,7 +20,7 @@
 			}
 			
 			pages = await $axios.$post('databases/815035805b6d4a53ab7a74c81ee7fa0b/query', filterData)
-		
+			
 			return { pages: pages.results,  }
 		}
 	}
