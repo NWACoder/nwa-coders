@@ -6,26 +6,26 @@
           Sign up for our newsletter
         </h2>
         <p class="mt-3 max-w-3xl text-lg text-gray-100">
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
+        	receive a monthly newlestter containing the latest speakers recording, curated coding courses, and possible discounted or free courses
         </p>
       </div>
       <div class="mt-8 lg:mt-0 lg:ml-8">
         <form class="sm:flex">
           <label for="email-address" class="sr-only">Email address</label>
-          <input id="email-address" name="email-address" type="email" autocomplete="email" required="" class="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs rounded-md" placeholder="Enter your email" />
+          <input id="email-address" name="email-address" type="email" autocomplete="email" required="" class="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-green-500 focus:border-indigo-500 sm:max-w-xs rounded-md" placeholder="Enter your email" />
           <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-            <button type="submit" class="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-black bg-white hover:bg-indigo-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Notify me
+            <button type="submit" class="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-black bg-white hover:bg-green-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+              Subscribe
             </button>
           </div>
         </form>
-        <p class="mt-3 text-sm text-gray-200">
+        <!-- <p class="mt-3 text-sm text-gray-200">
           We care about the protection of your data. Read our
           {{ ' ' }}
           <a href="#" class="font-medium underline">
             Privacy Policy.
           </a>
-        </p>
+        </p> -->
       </div>
     </div>
   </div>
