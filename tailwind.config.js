@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
 	options: {
-      safelist: ['bg-green-600','bg-purple-600','bg-red-600']
+      safelist: ['bg-green-600','bg-purple-600','bg-red-600','bg-purple-600']
   	}
   },
   darkMode: false, // or 'media' or 'class'

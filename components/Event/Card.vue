@@ -1,7 +1,8 @@
 <template>
 	<div 
 	:class="'bg-'+item.properties.Type.select.color+'-600'"
-	class="relative border-8 border-white rounded-lg p-4 h-96 w-auto cursor-pointer">
+	class="relative border-8 border-white rounded-lg p-4 h-96 w-auto cursor-pointer ">
+	<a :href="item.properties.Link.url" target="_blank" class="absolute h-full w-full z-10"> </a>
 		<!-- day -->
 		<div class="absolute -right-4 -top-4 bg-white text-black rounded-full p-4 h-12 w-12  flex items-center justify-center text-sm text-center">
 			{{ day(item.properties.Day.date.start) }}
@@ -22,6 +23,7 @@
 			<p class="text-center">Location: {{item.properties.Type.select.name}} </p>
 			<p class="text-center">{{item.properties.Time.rich_text[0].plain_text}} CST</p>
 		</div>
+
 	</div>
 </template>
 
