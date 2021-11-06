@@ -14,7 +14,7 @@
 		<div class="flex justify-center items-center px-4 h-full">
 			<div class="text-center text-lg xl:text-2xl">
 				{{item.properties.Name.title[0].plain_text}}
-				<p v-if="item.properties.Speaker.rich_text.length > 0" class="text-sm pt-4">Guest Speaker<br>{{ item.properties.Speaker.rich_text[0].plain_text }}</p>
+				<p v-if="item.properties.Speaker.relation.length > 0" class="text-sm pt-4">Guest Speaker<br>{{ item.Speaker.children.properties.Name.title[0].plain_text }}</p>
 			</div>
 		</div>
 		<!-- time -->

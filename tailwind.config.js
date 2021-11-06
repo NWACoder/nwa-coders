@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
 	options: {
-      safelist: ['bg-green-600','bg-purple-600']
+      safelist: ['bg-green-600','bg-purple-600','bg-red-600']
   	}
   },
   darkMode: false, // or 'media' or 'class'
@@ -15,7 +15,8 @@ module.exports = {
   		'mid': '#003643',
   		'second': '#032A36',
   		'thir': '#255461',
-  		'trim': '#009A5B'
+  		'trim': '#009A5B',
+  		'bright': '#00DC82'
       }
     },
     boxShadow: {
