@@ -25,7 +25,9 @@
 		<div class="container mx-auto px-4 md:px-0 my-8 grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-12 lg:px-0 md:gap-12 ">
 			<EventCard v-for="(item,index) in data" :item="item" :key="index"/>
 
-			<div v-if="data.length < 5" class="flex justify-center items-center pt-12 lg:pt-0">
+			<div v-if="data.length < 5" 
+			:class="'col-span-'+(5-data.length)"
+			class="flex justify-center items-center pt-12 lg:pt-0">
 				<p class="text-center">More Events <br> Coming Soon</p>
 			</div>
 		</div>
