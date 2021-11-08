@@ -1,25 +1,19 @@
 <template>
-    <div class="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
-      
-      <div class="flex-shrink-0">
-        <img class="h-10 w-10 rounded-full" :src="speaker.properties.Image.files[0].file.url" alt="" />
-      </div>
-      <div class="flex-1 min-w-0">
-      	<a :href="'/speakers/'+speaker.properties.Slug.rich_text[0].plain_text"  class="focus:outline-none">
-          <span class="absolute inset-0" aria-hidden="true" />
-          
-          <p>{{ speaker.properties.Topic.rich_text[0].plain_text }}</p>
-          <p class="text-sm font-medium text-gray-900">
-            {{speaker.properties.Name.title[0].plain_text}}
-          </p>
-          <p class="text-sm text-gray-500 truncate">
-            {{ speaker.properties.Role.rich_text[0].plain_text }}
-          </p>
-        </a>
-      </div>
+	<div class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
+		<div class="flex-1 flex flex-col p-8">
+			<img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" :src="speaker.properties.Image.files[0].file.url" alt="" />
+			<h3 class="mt-6 text-gray-900 text-sm font-medium"> {{speaker.properties.Name.title[0].plain_text}}</h3>
+			<dl class="mt-1 flex-grow flex flex-col justify-between">
+				<dt class="sr-only">Title</dt>
+				<dd class="text-gray-500 text-sm">{{ speaker.properties.Role.rich_text[0].plain_text }}</dd>
+				<dt class="sr-only">Topic</dt>
+				<dd class="mt-3 text-gray-500">
+					<a :href="'/speakers/'+speaker.properties.Slug.rich_text[0].plain_text">{{ speaker.properties.Topic.rich_text[0].plain_text }}</a>
+				</dd>
+			</dl>
+		</div>
 
-    </div>
-
+	</div>
 </template>
 
 <script>
