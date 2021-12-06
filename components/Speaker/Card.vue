@@ -1,7 +1,7 @@
 <template>
 	<div class="col-span-1 flex flex-col text-center bg-white rounded-lg shadow divide-y divide-gray-200">
 		<div class="flex-1 flex flex-col p-8">
-			<img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" :src="speaker.properties.Image.files[0].file.url" alt="" />
+			<!-- <img class="w-32 h-32 flex-shrink-0 mx-auto rounded-full" :src="speaker.properties.Image.files[0].file.url" v-if="speaker.properties.Image.files[0].file.url" alt="" /> -->
 			<h3 class="mt-6 text-gray-900 text-sm font-medium"> {{speaker.properties.Name.title[0].plain_text}}</h3>
 			<dl class="mt-1 flex-grow flex flex-col justify-between">
 				<dt class="sr-only">Title</dt>
