@@ -55,7 +55,7 @@ export default {
   		baseUrl: process.env.BASE_URL || 'https://api.notion.com/v1/',
 		headers: {
   	  		'Authorization': process.env.NOTION_AUTH,
-  	  		"Notion-Version": "2021-05-13"
+  	  		"Notion-Version": process.env.NOTION_VERSION
   	  	},
   },
 
